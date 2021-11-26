@@ -1,0 +1,359 @@
+/* SHELTERBOX MAPBOX STYLESHEET SP21*/
+
+* {
+  box-sizing: border-box;
+  font-family: Open-Sans, sans-serif;
+} 
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* name */
+h3 {
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #194EBE;
+  margin: 0;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+/* description */
+h4 {
+  margin: 0;
+  display: block;
+  font-weight: 400;
+}
+
+/* country */
+h5 {
+  margin: 0;
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+/* full case study */
+h7 {
+  font: 400 15px/22px 'Open Sans', 'Helvetica Neue', Sans-Serif;
+  padding-right: 10px;
+}
+
+button {
+  background-color: #194EBE; /* ShelterBox Green */
+  border: none;
+  color: white;
+  /*padding: 15px 32px;*/
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 15px;
+  width: 217px;
+  height: 29px;
+  opacity: 75%;
+}
+
+button:hover {
+  opacity: 100%;
+}
+
+
+/* 
+map 
+*/
+.map-overlay {
+  position: absolute;
+  bottom: 5%;
+  left: 40%;
+  height: 300px;
+  width: auto;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: Open-Sans, sans-serif;
+  overflow: auto;
+  border-radius: 10px;
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+
+/* 
+legend 
+*/
+.legend {
+  position: fixed;
+  bottom: 5%;
+  left: 5%;
+  background: rgba(255, 255, 255, .3);
+  border-radius: 20px;
+  margin: 10px;
+  display: block;
+  padding: 25px 25px 25px 25px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.keys {
+  padding: 10px 20px 0px 00px;
+}
+
+.keys img {
+  width: auto;
+  height: 24px;
+}
+
+.align-keys div {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+/* 
+sidebar aka expanded story
+*/
+.column{
+  float: left;
+  width: 50%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.rounded-rect {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 50px -25px black;
+}
+
+.flex-center {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right {
+  right: 0px;
+}
+
+.sidebar-content {
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  font-family: Open-Sans, sans-serif;
+  font-size: 14px;
+  color: black;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin: 0;
+  font-weight: 400;
+}
+
+.sidebar-toggle {
+  position: absolute;
+  width: 0em;
+  height: 0em;
+  overflow: hidden;
+  display: none;
+  border-radius: 20px;
+}
+
+.sidebar-toggle.right {
+  left: -1.5em;
+}
+
+.sidebar-toggle:hover {
+  color: #194EBE;
+  cursor: pointer;
+}
+
+.sidebar {
+  transition: transform 1s;
+  z-index: 1;
+  width: 500px;
+  height: 100%;
+}
+
+.sidebar-content {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 50px;
+}
+
+#sidebar-text {
+  font: 400 15px/22px 'Open Sans', 'Helvetica Neue', Sans-Serif;
+}
+
+#sidebar-img {
+  max-width:100%;
+  max-height:100%;
+  height: auto;
+}
+
+#sidebar-button {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The sidebar styling has them "expanded" by default, we use CSS transforms to push them offscreen.
+   The toggleSidebar() function removes this class from the element in order to expand it.*/
+
+.right.collapsed {
+  transform: translateX(500px);
+}
+
+/*styling for overflow-y scroll bar*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+background-color: #bababa; /* light grey */
+border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+background-color: #909090; /* slightly darker grey */
+}
+
+
+/* 
+popup aka click state 
+*/
+
+#popup-img {
+  max-width:100%;
+  max-height:100%;
+  height: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.mapboxgl-popup {
+  padding-bottom: 5px;
+  filter: drop-shadow(0px 0px 35px rgba(0, 0, 0, 1));
+}
+
+.mapboxgl-popup-close-button {
+  color: #FFFFFF;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+  width:20px;
+  height:20px;
+  background-color: #194EBE;
+  opacity: 75%;
+}
+
+.mapboxgl-popup-close-button:hover {
+  color: #FFFFFF;
+  margin-right: 10px;
+  margin-top: 10px;
+  border-radius: 20px;
+  width:20px;
+  height:20px;
+  background-color: #194EBE;
+  opacity: 100%;
+}
+
+.mapboxgl-popup-content {
+  font: 400 15px/22px 'Open Sans', 'Helvetica Neue', Sans-Serif;
+  padding-right: 10px;
+  width: 550px;
+  border-radius: 15px;
+}
+
+.mapboxgl-popup-content-wrapper {
+  padding: 1%;
+}
+
+/*name*/
+.mapboxgl-popup-content h3 {
+  letter-spacing: 0.01em;
+  text-align: left;
+  color: #194EBE;
+  margin: 0;
+  display: block;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 15px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/*description*/
+.mapboxgl-popup-content h4 {
+  margin: 0;
+  padding: 0px 0px 10px 0px;
+  font-weight: 400;
+}
+
+/*country*/
+.mapboxgl-popup-content h5 {
+  margin: 0;
+  display: block;
+  padding: 10px 0px 0px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/*POPUP HEADING*/
+.mapboxgl-popup-content h6 {
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #194EBE;
+  margin: 0;
+  display: block;
+  padding-top: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*HOVER TEXT*/
+.mapboxgl-popup-content p1 {
+  margin: 0;
+  display: block;
+  text-align: center;
+  padding: 0px 0px 0px 0px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.mapboxgl-container {
+  cursor: pointer;
+}
+
+.hoverbox .mapboxgl-popup-content {
+  background-color: "white";
+  width: auto;
+  height: auto;
+  color: #194EBE;
+}
+
+.mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
+  border-bottom-color: rgb(255, 255, 255);
+}
+

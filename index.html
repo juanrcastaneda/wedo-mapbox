@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ShelterBox | Case Study Map</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
+    <script src="https://npmcdn.com/@turf/turf/turf.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="map"></div>
+
+    <!--legend -->
+    <div class="legend">
+      <div>
+        <img
+          src="img/WEDO-Logo.png"
+          width="auto"
+          height="75px"
+        />
+      </div>
+      <div class="keys align-keys">
+        <div>
+          <img
+            src="img/marker.png"
+          />
+        </div>
+        <div>
+          Stories From the Field
+        </div>
+      </div>
+    </div>
+
+    <!-- sidebar -->
+    <div id="right" class="sidebar flex-center right collapsed">
+      <div class="sidebar-content rounded-rect">
+        <div id="sidebar-text"></div>
+        <div
+          class="sidebar-toggle rounded-rect right"
+          onclick="toggleSidebar('right')"
+        >
+          &larr;
+        </div>
+        <div id="sidebar-button">
+          <button onClick="toggleSidebar('right')">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
