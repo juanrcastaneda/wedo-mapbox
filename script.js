@@ -92,7 +92,7 @@ $(document).ready(function() {
   $.ajax({
     type: "GET",
     url:
-      "https://cors-anywhere.herokuapp.com/https://docs.google.com/spreadsheets/d/1lDoWr-8cY4-99RbkxRiAWU5klSlJO9Vacvt92PUTNxQ/gviz/tq?tqx=out:csv&sheet=Events",
+      "https://docs.google.com/spreadsheets/d/1lDoWr-8cY4-99RbkxRiAWU5klSlJO9Vacvt92PUTNxQ/gviz/tq?tqx=out:csv&sheet=Events",
     dataType: "text",
     success: function(csvData) {
       console.log('success');
