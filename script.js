@@ -92,7 +92,7 @@ $(document).ready(function() {
   $.ajax({
     type: "GET",
     url:
-      "https://docs.google.com/spreadsheets/d/1lDoWr-8cY4-99RbkxRiAWU5klSlJO9Vacvt92PUTNxQ/gviz/tq?tqx=out:csv&sheet=Events",
+      "https://docs.google.com/spreadsheets/d/e/2PACX-1vSYRQ1z5J8iKFrIgnmCNMv5Q8oJj_68a4W9YRqhrT0Ghh_eSgQnvl0Vi_hEdDQyQ9uoH4ZNZEI7Yeft/pub?gid=510825251&single=true&output=csv",
     dataType: "text",
     success: function(csvData) {
       console.log('success');
@@ -151,12 +151,12 @@ map.on("click", "csvData", function(e) {
   // For example: e.features[0].properties.Name is retrieving information from the field Name in the original CSV.
   var description =
     `<div class="row">` + 
-    `<div class="column">` + `<h3>` + e.features[0].properties.Location + `</h3>` + `</div>` + 
-    `<div class="column">` + `<h5>` + e.features[0].properties.Ambassador + `</h5>` + `</div>` +
+    `<div class="column">` + `<h3>` + e.features[0].properties.Ambassador + `</h3>` + `</div>` + 
+    `<div class="column">` + `<h5>` + e.features[0].properties.Location + `</h5>` + `</div>` +
     `</div>` +
     `<div class="row">` +
     `<div class="column"> <img id="popup-img" src="` + e.features[0].properties.Img + `">` + `</div>` +
-    `<div class="column">` + `<h4>` + e.features[0].properties.Description + `</h4>` /*+
+    `<div class="column">` + `<h4>` + e.features[0].properties.Description  + `</h4>` /*+
     `<div>` + `<button onclick="toggleSidebar('right');changeLearnMore('sidebar-text', moreText); ">Learn More</button>` + `</div>` */ +
     `</div>` +
     `</div>`;
@@ -187,7 +187,7 @@ map.on("mouseenter", "csvData", function(e) {
   map.getCanvas().style.cursor = "pointer";
   var coordinates = e.features[0].geometry.coordinates.slice();
   var hoverDescription =
-    "<p1>" + e.features[0].properties.Location + "'s Story " + "</p1>"; //+ '<p1>' + e.features[0].properties.Country + '</p1>';
+    "<p1>" + e.features[0].properties.Ambassador + " | "+ e.features[0].properties.Location + "</p1>"; //+ '<p1>' + e.features[0].properties.Country + '</p1>';
   while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
     coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
   }
