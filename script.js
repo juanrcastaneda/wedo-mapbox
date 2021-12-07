@@ -1,3 +1,4 @@
+window.alert("Refresh the page if map markers do not show up! Press OK.");
 var bigpopup = new mapboxgl.Popup({
   className: "clickbox"
 });
@@ -156,8 +157,8 @@ map.on("click", "csvData", function(e) {
     `</div>` +
     `<div class="row">` +
     `<div class="column"> <img id="popup-img" src="` + e.features[0].properties.Img + `">` + `</div>` +
-    `<div class="column">` + `<h4>` + e.features[0].properties.Description  + `</h4>` /*+
-    `<div>` + `<button onclick="toggleSidebar('right');changeLearnMore('sidebar-text', moreText); ">Learn More</button>` + `</div>` */ +
+    `<div class="column">` + `<h4>` + e.features[0].properties.Description  + `</h4>` +
+    `<div>` + `<a href="https://thegivingblock.com/donate/Womens-Entrepreneurship-Day-Organization-Celebration/" target="_blank">` +  `<button>Support Our Cause</button>` + `</a>` + `</div>`  +
     `</div>` +
     `</div>`;
   // added quote underneath image to test how it would look -sel
