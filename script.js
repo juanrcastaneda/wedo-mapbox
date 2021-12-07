@@ -134,7 +134,7 @@ map.on("click", "csvData", function(e) {
   collapseSidebar("right");
   var coordinates = e.features[0].geometry.coordinates.slice();
   moreText =
-    `<img id="sidebar-img" src="` + e.features[0].properties.Img + `">` +
+    `<img id="sidebar-img" src="` + e.features[0].properties.Photograph + `">` +
     `<div>` + `<h3>` + e.features[0].properties.Location + `</h3>` + `</div>` + 
     `<h5>` + e.features[0].properties.Ambassador + `</h5>` +
     `<h7>` + e.features[0].properties.Description + `</h7>`;
@@ -156,14 +156,14 @@ map.on("click", "csvData", function(e) {
     `<div class="column">` + `<h5>` + e.features[0].properties.Location + `</h5>` + `</div>` +
     `</div>` +
     `<div class="row">` +
-    `<div class="column"> <img id="popup-img" src="` + e.features[0].properties.Img + `">` + `</div>` +
+    `<div class="column"> <img id="popup-img" src="` + e.features[0].properties.Photograph + `">` + `</div>` +
     `<div class="column">` + `<h4>` + e.features[0].properties.Description  + `</h4>` +
     `<div>` + `<a href="https://thegivingblock.com/donate/Womens-Entrepreneurship-Day-Organization-Celebration/" target="_blank">` +  `<button>Support Our Cause</button>` + `</a>` + `</div>`  +
     `</div>` +
     `</div>`;
   // added quote underneath image to test how it would look -sel
   
-  //put the big popup on the map
+  //put the big popup on the 
   bigpopup
     .setLngLat(coordinates)
     .addTo(map)
